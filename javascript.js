@@ -1,17 +1,5 @@
-// Introduction, so you know that you enter the challenge.
 //const intro = alert("Hey! Are you ready to challenge the computer?");
 //const intro2 = alert("Don't worry, my code will keep track of the score. Just enjoy the game!");
-
-
-
-
-// Prompts for the player to choose hand. Generates computers choice from function.
-const playerSelection = prompt('Choose your hand! Rock, paper or scissor? ');
-const computerSelection = getComputerChoice();
-
-//Keep track of the score, best of five.
-let playerScore = 0;
-let computerScore = 0;
 
 // Randomize the computers choice from 3 different choices
 function getComputerChoice() {
@@ -21,11 +9,18 @@ function getComputerChoice() {
         return pick[Math.floor(Math.random() * pick.length)];
 }
 
+// Prompts for the player to choose hand. Generates computers choice from function.
+
+
+
 // This function plays a single round of Rock, Paper, Scissors
-function playRound(playerSelection, computerSelection)  {
+function playRound()  {
+        
+        const playerSelection = prompt("Rock, paper or scissor?");
+        const computerSelection = getComputerChoice();
 
         if (playerSelection.toLowerCase() === computerSelection)    {
-                return "It's a tie! There is no winner this round.";
+                return `It's a tie! You both picked ${playerSelection.toLowerCase()}.`;
         }
         else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissor")    {
                 return "You win! Rock beats scissors.";
@@ -42,15 +37,22 @@ function playRound(playerSelection, computerSelection)  {
         else if (playerSelection.toLowerCase() === "scissor" && computerSelection === "paper")    {
                 return "You win! Scissors beats paper.";
         }
-        else (playerSelection.toLowerCase() === "scissor" && computerSelection === "rock")    {
+        else if (playerSelection.toLowerCase() === "scissor" && computerSelection === "rock")    {
                 return "You loose! Rock beats scissors.";
         }
 }
 
-// This function plays 5 rounds of the game
+function playGame()     {
 
-console.log(playRound(playerSelection, computerSelection));
+        console.log(playRound());
+        console.log(playRound());
+        console.log(playRound());
+        console.log(playRound());
+        console.log(playRound());
 
+}
+
+playGame();
 
 
 
