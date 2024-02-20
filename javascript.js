@@ -9,7 +9,7 @@ function getComputerChoice() {
         return pick[Math.floor(Math.random() * pick.length)];
 }
 
-let userScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 // This function plays a single round of Rock, Paper, Scissors
@@ -22,28 +22,28 @@ function playRound()  {
                 return `It's a tie! You both picked ${playerSelection.toLowerCase()}.`;
         }
         else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissor")    {
+                playerScore++;
                 return "You win! Rock beats scissors.";
-                userScore++;
         }
         else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper")   {
-                return "You loose! Paper beats rock.";
                 computerScore++;
+                return "You loose! Paper beats rock.";
         }
         else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock")   {
+                playerScore++;
                 return "You win! Paper beats rock.";
-                userScore++;
         }
         else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissor")   {
-                return "You loose! Scissors beats paper.";
                 computerScore++;
+                return "You loose! Scissors beats paper.";
         }
         else if (playerSelection.toLowerCase() === "scissor" && computerSelection === "paper")    {
+                playerScore++;
                 return "You win! Scissors beats paper.";
-                userScore++;
         }
         else if (playerSelection.toLowerCase() === "scissor" && computerSelection === "rock")    {
-                return "You loose! Rock beats scissors.";
                 computerScore++;
+                return "You loose! Rock beats scissors.";
         }
 }
 
@@ -58,9 +58,19 @@ function playGame()     {
 
 }
 
+function winGame()      {
+        if (playerScore == 5)   {
+                return "Not too bad, you managed to beat a computer!";
+        }
+        else if (computerScore == 5)       {
+                return "The computer wins. Are you happy about that?";
+        }            
+}
+
 playGame();
 
-
+console.log(`Your managed to get a score of ${playerScore}.`);
+console.log(`The dumb computer collected a score of ${computerScore}.`);
 
 
 
