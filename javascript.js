@@ -1,7 +1,3 @@
-//const intro = alert("Hey! Are you ready to challenge the computer?");
-//const intro2 = alert("Don't worry, my code will keep track of the score. Just enjoy the game!");
-
-// Randomize the computers choice from 3 different choices
 function getComputerChoice() {
 
         const pick = ['rock', 'paper', 'scissor'];
@@ -12,7 +8,6 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-// This function plays a single round of Rock, Paper, Scissors
 function playRound()  {
         
         const playerSelection = prompt("Choose your weapon: Rock, paper or scissor?");
