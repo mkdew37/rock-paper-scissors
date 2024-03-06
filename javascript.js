@@ -45,28 +45,18 @@ function playRound()  {
 // Plays 5 rounds of Rock, paper, scissor!
 function playGame()     {
 
-        console.log(playRound());
-        console.log(playRound());
-        console.log(playRound());
-        console.log(playRound());
-        console.log(playRound());
+        for (i = 0; i < 5; i++)   {
 
-}
-
-function winGame()      {
-        if (playerScore == 5)   {
-                return "Not too bad, you managed to beat a computer!";
+        console.log(playRound());
         }
-        else if (computerScore == 5)       {
-                return "The computer wins. Are you happy about that?";
-        }            
+
+        if (playerScore > computerScore) {
+                console.log(`Congratulations! You win the game with a score of ${playerScore} to ${computerScore}!`);
+            } else if (playerScore < computerScore) {
+                console.log(`Sorry! You lose the game with a score of ${playerScore} to ${computerScore}!`);
+            } else {
+                console.log("It's a tie! Try harder next time.");
+            }
 }
 
 playGame();
-
-console.log(`Your managed to get a score of ${playerScore}.`);
-console.log(`The dumb computer collected a score of ${computerScore}.`);
-
-
-
-
